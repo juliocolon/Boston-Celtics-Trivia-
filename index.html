@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <!-- Google fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Merriweather:ital@0;1&family=Space+Mono&family=Work+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bungee+Shade&family=Merriweather:ital@0;1&family=Space+Mono&family=Work+Sans&display=swap" rel="stylesheet">
+    <title>Boston Celtics Trivia
+    </title>
+</head>
+<body>
+<!-- Game header -->
+
+<audio id="music" loop>
+    <source src="bow-wow-basketball-lyrics_HTt7LWLs.mp3" type="audio/mpeg" />
+    Your browser does not support the audio element.
+  </audio>
+    <header>
+          <h1 id="heading-text">Boston Celtics Trivia</h1>
+    </header>
+    <!-- Button container -->
+    <div id="top-btn-container">
+        <button id="directions" class="top-buttons">DIRECTIONS</button>
+        <button id="restart" class="top-buttons">RESTART</button>
+    </div>
+
+    <!-- Modal container for the directions button -->
+    <div  class="modal-container" id="modal_container">
+        <div class="modal">
+            <h1>DIRECTIONS</h1><br>
+            <p>• ALL Questions Are Based On The History Of The Boston Celtics</p>
+            <p>• First Player To Answer Seven Correct Questions Wins!</p>
+            <p>• First Player To Answer Three Incorrect Questions Loses!</p>
+            <p>• Click The Restart Button To Start Over</p>
+            <button id="close" class="top-buttons">Close</button>
+        </div>
+    </div>
+
+    <div id="game-container" class="row">
+        <div id="score-board" class="column">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Neque 
+                magnam cum aut nesciunt! Perspiciatis, omnis labore? In libero maiores exercitationem quis animi officia? Saepe eaque, 
+                impedit quas maiores ullam neque.</p>
+        </div>
+
+        <!-- question and answer container -->
+            <div id="answer-button-container" class="column"> 
+                <h3>What year were the Boston Celtics founded?</h3>
+                <button class="answer-buttons"><p>A: 1946</p></button>
+                <button class="answer-buttons"><p>B: 1956</p></button>
+                <button class="answer-buttons"><p>C: 1966</p></button>
+                <button class="answer-buttons"><p>D: 1976</p></button>
+            </div>   
+    </div>
+    
+
+  
+  <!-- scrip link tag -->
+    <script src="main.js"></script>
+</body>
+</html>
