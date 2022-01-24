@@ -32,10 +32,11 @@ body{
 #top-btn-container{
     display: flex; 
     justify-content: center;
+    margin-top: 10px;
 }
 
 .top-buttons{
-    margin: 50px 10%;
+    margin: 60px 8%;
     height: 50px;
     color: whitesmoke;
     background-color: black;
@@ -100,9 +101,30 @@ footer > .mute{
     width: 20px;
     height: 20px;
 }
+
+.hide{
+display: none; 
+}
+
+/*Game intro text*/ 
+
+#game-message{
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 100px;
+}
+
+.game-intro-text{
+    color: whitesmoke;
+    font-size: 90px;
+    font-family: 'Bebas Neue', cursive;
+}
+
+
 /* Create two equal columns that sits next to each other */
 .row {
-    display: flex;
     justify-content: center;
     /* align-items: center; */
     /* width: 50%; */
@@ -147,6 +169,7 @@ h3{
     cursor: pointer;
 }
 /*Answer Button styling start*/
+
 
 
 

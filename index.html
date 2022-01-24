@@ -24,6 +24,8 @@
     <!-- Button container -->
     <div id="top-btn-container">
         <button id="directions" class="top-buttons">DIRECTIONS</button>
+        <button id="start" class="top-buttons">START</button>
+        <button id="next" class="top-buttons">NEXT</button>
         <button id="restart" class="top-buttons">RESTART</button>
     </div>
 
@@ -32,14 +34,21 @@
         <div class="modal">
             <h1>DIRECTIONS</h1><br>
             <p>• ALL Questions Are Based On The History Of The Boston Celtics</p>
-            <p>• First Player To Answer Seven Correct Questions Wins!</p>
-            <p>• First Player To Answer Three Incorrect Questions Loses!</p>
+            <p>• Click The Start Button To Begin</p>
+            <p>• Click The Next Button To Move On To The Next Question</p>
+            <p>• First Player To Answer Seven Correct Questions Wins</p>
+            <p>• First Player To Answer Three Incorrect Questions Loses</p>
             <p>• Click The Restart Button To Start Over</p>
             <button id="close" class="top-buttons">Close</button>
         </div>
     </div>
 
-    <div id="game-container" class="row">
+    <div id="game-message">
+        <h2 class="game-intro-text">How Well Do You Know Your Boston Celtics History?</h2>
+        <h2 class="game-intro-text">Press Start To Find Out!</h2>
+    </div>
+
+    <div id="game-container" class="row hide">
         <div id="score-board" class="column">
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Neque 
                 magnam cum aut nesciunt! Perspiciatis, omnis labore? In libero maiores exercitationem quis animi officia? Saepe eaque, 
@@ -48,7 +57,7 @@
 
         <!-- question and answer container -->
             <div id="answer-button-container" class="column"> 
-                <h3>What year were the Boston Celtics founded?</h3>
+                <h3 id="question">What year were the Boston Celtics founded?</h3>
                 <button class="answer-buttons"><p>A: 1946</p></button>
                 <button class="answer-buttons"><p>B: 1956</p></button>
                 <button class="answer-buttons"><p>C: 1966</p></button>

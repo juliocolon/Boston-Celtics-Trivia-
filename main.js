@@ -2,7 +2,14 @@
 const directionsBtn = document.querySelector('#directions'); 
 const modal_container = document.querySelector('#modal_container');
 const modal_close = document.querySelector('#close');
+const startBtn = document.querySelector('#start')
 const restartBtn = document.querySelector('#restart'); 
+const gameContainer = document.querySelector('.row');
+const gameMessage = document.querySelector('#game-message');
+let randomQuestion, currentQuestionIndex;
+const questionElement = document.querySelector('#question'); 
+console.log(questionElement)
+const answerButtons = document.querySelector('.answer-buttons');
 
 // Question class constructor 
 class Question {
@@ -148,20 +155,44 @@ let questionArray = [
 ]
 console.log(questionArray)
 
+
+
+//Function for starting the game 
+const startGame = () => {
+gameContainer.style.display = 'flex';
+gameMessage.style.display = 'none';
+showQuestion();
+}
+
+//Function for setting next question
+const setNextQuestion = () => {
+
+}
+
+//Function for showing next question
+const showQuestion = (question) => {
+questionElement.textContent = generateQuestion().question;
+}
+
 //Function for Random Question 
 const generateQuestion = () => {
       let randomQuestion = questionArray[Math.floor(Math.random() * questionArray.length)]; 
       return randomQuestion; 
     }
+    console.log(generateQuestion().question);
     
-    console.log(generateQuestion());
 
+
+// Event listeners 
+startBtn.addEventListener('click', (evt) => {
+startGame();
+});
 
 //Directions menu toggle Source - https://www.youtube.com/watch?v=XH5OW46yO8I 
-    directionsBtn.addEventListener('click',() =>{
+ directionsBtn.addEventListener('click',() =>{
         modal_container.classList.add('show'); 
     }); 
 
-    modal_close.addEventListener('click',() =>{
+ modal_close.addEventListener('click',() =>{
         modal_container.classList.remove('show'); 
     }); 
