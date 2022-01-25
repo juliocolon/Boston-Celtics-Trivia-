@@ -6,187 +6,99 @@ const startBtn = document.querySelector('#start')
 const restartBtn = document.querySelector('#restart'); 
 const gameContainer = document.querySelector('.row');
 const gameMessage = document.querySelector('#game-message');
-let randomQuestion, currentQuestionIndex;
 const questionElement = document.querySelector('#question'); 
-console.log(questionElement)
-const answerButtons = document.querySelector('.answer-buttons');
+const answerButtons = Array.from(document.querySelectorAll('.answer-buttons'));
+console.log(answerButtons)
 
-// Question class constructor 
-class Question {
-    constructor(question, answer, wrong1, wrong2, wrong3){
-        this.question = question; 
-        this.answer = answer; 
-        this.wrong1 = wrong1; 
-        this.wrong2 = wrong2; 
-        this.wrong3 = wrong3; 
-    }
-}
-
-// Instances of Question class 
-let question1 = new Question(
-    'What year were the Boston Celtics founded?', 
-    '1946', 
-    '1956', 
-    '1966', 
-    '1976'); 
-
-let question2 = new Question(
-    'What is the name of the of the Boston Celtics Mascot?',
-    'Lucky',
-    'Shamrock',
-    'Irish', 
-    'Banshee'); 
-
-let question3 = new Question(
-    'Which Celtics player grabbed 50 rebounds in a single game?', 
-    'Bill Russell', 
-    'Dave Cowens', 
-    'Robert Parish', 
-    'Kevin Garnett'); 
-
-let question4 = new Question(
-    'What did Celtics coach Red Auerbach often do when he thought victory was assured?', 
-    'Smoke A Cigar', 
-    'Have A Beer', 
-    'Take Off His Shoes', 
-    'Take Off His Tie'); 
-
-let question5 = new Question(
-    'Which Celtics player scored 60 points in a single game?', 
-    'Larry Bird', 
-    'Paul Pierce', 
-    'Bob Cousy', 
-    'John Havlicek'); 
-
-let question6 = new Question(
-    'Who is the Boston Celtics all-time points leader?', 
-    'John Havilcek', 
-    'Larry Bird', 
-    'Paul Pierce', 
-    'Bill Russell');
-
-let question7 = new Question(
-    'Which Celtic is one of only five NBA players to lead his team in all five major statistical categories for a season?', 
-    'Dave Cowens', 
-    'Bill Russell', 
-    'Kevin Garnett', 
-    'Larry Bird'); 
-
-let question8 = new Question(
-    'Which Boston Celtic won five NBA Most Valuable Player Awards?', 
-    'Bill Russell', 
-    'Larry Bird', 
-    'Bob Cousy', 
-    'Dave Cowens'); 
-
-let question9 = new Question(
-    'What is the most points scored by the Celtics (in regulation) in a single game?', 
-    '173 Points', 
-    '189 Points', 
-    '163 Points', 
-    '168 Points'); 
-
-let question10 = new Question(
-    'Which Celtic was the first African-American player in the NBA?', 
-    'Chuck Cooper', 
-    'Bill Russell', 
-    'K.C Jones', 
-    'Sam Jones'); 
-
-let question11 = new Question(
-    'How many NBA championships did the Celtics win during the 20th century?', 
-    '16', 
-    '15', 
-    '17', 
-    '10'); 
-
-let question12 = new Question(
-    'Which Celtics coach had the highest winning percentage?', 
-    'K.C Jones', 
-    'Doc Rivers', 
-    'Red Auerbach', 
-    'M.L Carr');  
-
-let question13 = new Question(
-    'Who was the first Celtic to win the NBA Sixth Man of the Year Award?', 
-    'Kevin McHale', 
-    'Bill Walton', 
-    'Marcus Smart',
-    'Dennis Smith'); 
-
-let question14 = new Question(
-    'Who was the first Celtic with more than 200 blocked shots in a season?',
-    'Robert Parish', 
-    'Kevin Garnett', 
-    'Kendrick Perkins', 
-    'Bill Russell'); 
-
-let question15 = new Question(
-    'Who was the first Celtic with 1,000 career three-pointers?', 
-    'Paul Pierce', 
-    'Ray Allen', 
-    'Antoine Walker', 
-    'Larry Bird'); 
-
-let question16 = new Question(
-    'What is the fewest field goals the Celtics ever allowed an opposing team in a game?', 
-    '16 Field Goals', 
-    '22 Field Goals', 
-    '13 Field Goals', 
-    '18 Field Goals'); 
-
-let questionArray = [
-    question1, 
-    question2,
-    question3,
-    question4,
-    question5,
-    question6,
-    question7, 
-    question8,
-    question9,
-    question10,
-    question11,
-    question12,
-    question13,
-    question14,
-    question15,
-    question16 
+//Questions array
+let questions = [
+    {
+        question:'What year were the Boston Celtics founded?',
+        choices:['1946','1956','1966','1976'],
+        answer: '1946'
+    },
+    {
+        question:'What is the name of the of the Boston Celtics Mascot?',
+        choices:['Irish','Shamrock','Lucky','Banshee'],
+        answer: 'Lucky'
+    },
+    {
+        question:'Which Celtics player grabbed 50 rebounds in a single game?',
+        choices:['Kevin Garnett','Dave Cowens','Robert Parish','Bill Russell'],
+        answer: 'Bill Russell'
+    },
+    {
+        question:'What did Celtics coach Red Auerbach often do when he thought victory was assured?',
+        choices:['Take Off His Shoes','Have A Beer','Smoke A Cigar','Take Off His Tie'],
+        answer: 'Smoke A Cigar'
+    },
+     {
+        question:'Which Celtics player scored 60 points in a single game?',
+        choices:['Larry Bird','Paul Pierce','Jasyon Tatum','John Havlicek'],
+        answer: 'Larry Bird'
+    },
+    {
+        question:'Who is the Boston Celtics all-time points leader?',
+        choices:['Paul Pierce','Larry Bird','John Havilcek','Bill Russell'],
+        answer: 'John Havilcek'
+    },
+    {
+        question:'Which Celtic is one of only five NBA players to lead his team in all five major statistical categories for a season?',
+        choices:['Dave Cowens','Bill Russell','Kevin Garnett','Larry Bird'],
+        answer: 'Dave Cowens'
+    },
+    {
+        question:'Which Boston Celtic won five NBA Most Valuable Player Awards?',
+        choices:['Larry Bird','Bill Russell','Bob Cousy','Dave Cowens'],
+        answer: 'Bill Russell'
+    },
+    {
+        question:'What is the most points scored by the Celtics (in regulation) in a single game?',
+        choices:['168 Points','189 Points','163 Points', '173 Points'],
+        answer: '173 Points'
+    },
+    {
+        question:'Which Celtic was the first African-American player in the NBA?',
+        choices:['K.C Jones','Bill Russell','Sam Jones','Chuck Cooper'],
+        answer: 'Chuck Cooper'
+    },
 ]
-console.log(questionArray)
 
-
+let score = 0;
+let currentQuestionIndex = 0; 
+let correctQuestions = 0; 
+let currentAnswerIndex = 0; 
+let totalQuestions = questions.length; 
 
 //Function for starting the game 
 const startGame = () => {
 gameContainer.style.display = 'flex';
 gameMessage.style.display = 'none';
-showQuestion();
+getNewQuestion();
 }
 
-//Function for setting next question
-const setNextQuestion = () => {
+const getNewQuestion = () => {
+   let currentQuestion = questions[currentQuestionIndex]; 
+   console.log(currentQuestion)
+   console.log(currentQuestion.question)
+   questionElement.textContent = currentQuestion.question; 
+      currentQuestion.choices.forEach(choice => {
+     let currentButton = answerButtons[currentAnswerIndex]
+       currentButton.textContent = choice;
+     });    
 
-}
+};
 
-//Function for showing next question
-const showQuestion = (question) => {
-questionElement.textContent = generateQuestion().question;
-}
-
-//Function for Random Question 
-const generateQuestion = () => {
-      let randomQuestion = questionArray[Math.floor(Math.random() * questionArray.length)]; 
-      return randomQuestion; 
-    }
-    console.log(generateQuestion().question);
-    
 
 
 // Event listeners 
 startBtn.addEventListener('click', (evt) => {
 startGame();
 });
+
+restartBtn.addEventListener('click', (evt) => {
+    location.reload(); 
+})
 
 //Directions menu toggle Source - https://www.youtube.com/watch?v=XH5OW46yO8I 
  directionsBtn.addEventListener('click',() =>{

@@ -138,7 +138,7 @@ display: none;
     background-color: rgb(245, 245, 245, 0.8);
     border: 8px solid forestgreen;
     width: 35%; 
-    margin: 30px;
+    margin: 10px;
   }
 
 /*Answer Button styling start*/
@@ -170,6 +170,26 @@ h3{
 }
 /*Answer Button styling start*/
 
+#score-div{
+    margin: 25% auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    height: 50%;
+    color: whitesmoke;
+    background-color: black;
+    border: 3px solid forestgreen;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 25px;
+}
+
+#score-text{
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+}
 
 
 

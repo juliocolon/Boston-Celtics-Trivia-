@@ -14,10 +14,6 @@
 <body>
 <!-- Game header -->
 
-<audio id="music" loop>
-    <source src="bow-wow-basketball-lyrics_HTt7LWLs.mp3" type="audio/mpeg" />
-    Your browser does not support the audio element.
-  </audio>
     <header>
           <h1 id="heading-text">Boston Celtics Trivia</h1>
     </header>
@@ -50,18 +46,19 @@
 
     <div id="game-container" class="row hide">
         <div id="score-board" class="column">
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Neque 
-                magnam cum aut nesciunt! Perspiciatis, omnis labore? In libero maiores exercitationem quis animi officia? Saepe eaque, 
-                impedit quas maiores ullam neque.</p>
+            <div id="score-div">
+                <h1 id="score-text">CURENT SCORE:<span id="score-tracker"> 0</span></h1>
+            </div>
+           
         </div>
 
         <!-- question and answer container -->
             <div id="answer-button-container" class="column"> 
-                <h3 id="question">What year were the Boston Celtics founded?</h3>
-                <button class="answer-buttons"><p>A: 1946</p></button>
-                <button class="answer-buttons"><p>B: 1956</p></button>
-                <button class="answer-buttons"><p>C: 1966</p></button>
-                <button class="answer-buttons"><p>D: 1976</p></button>
+                <h3 id="question">Question</h3>
+                <button class="answer-buttons">Choice 1</button>
+                <button class="answer-buttons">Choice 2</button>
+                <button class="answer-buttons">Choice 3</button>
+                <button class="answer-buttons">Choice 4</button>
             </div>   
     </div>
     
