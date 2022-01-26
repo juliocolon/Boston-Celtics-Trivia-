@@ -14,7 +14,7 @@ header{
 
 #heading-text{
     color: whitesmoke;
-    font-size: 100px;
+    font-size: 90px;
     font-family: 'Bungee Shade', cursive;
 }
 
@@ -36,7 +36,7 @@ body{
 }
 
 .top-buttons{
-    margin: 60px 8%;
+    margin: 60px 6%;
     height: 50px;
     color: whitesmoke;
     background-color: black;
@@ -118,7 +118,7 @@ display: none;
 
 .game-intro-text{
     color: whitesmoke;
-    font-size: 90px;
+    font-size: 80px;
     font-family: 'Bebas Neue', cursive;
 }
 
@@ -133,11 +133,11 @@ display: none;
   .column {
     align-items: center;
     padding: 30px;
-    height: 630px;
+    height: 580px;
     max-height: 300vh;
     background-color: rgb(245, 245, 245, 0.8);
     border: 8px solid forestgreen;
-    width: 35%; 
+    width: 30%; 
     margin: 10px;
   }
 
@@ -153,7 +153,7 @@ h3{
   }
 
   .answer-buttons{
-    margin: 40px;
+    margin: 30px;
     height: 50px;
     color: whitesmoke;
     background-color: black;
@@ -170,26 +170,46 @@ h3{
 }
 /*Answer Button styling start*/
 
-#score-div{
-    margin: 25% auto;
+
+/*Score board */
+
+#score-board{
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+#wins-div{
+    margin: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 70%;
-    height: 50%;
+    width: 60%;
+    height: 30%;
     color: whitesmoke;
     background-color: black;
     border: 3px solid forestgreen;
     font-family: 'Bebas Neue', cursive;
-    font-size: 25px;
+    font-size: 22px;
 }
 
-#score-text{
-    display: flex; 
+#losses-div{
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 60%;
+    height: 30%;
+    color: whitesmoke;
+    background-color: black;
+    border: 3px solid forestgreen;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 22px;
 }
+
 
 
 

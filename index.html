@@ -1,21 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <!-- Google fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Merriweather:ital@0;1&family=Space+Mono&family=Work+Sans&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bungee+Shade&family=Merriweather:ital@0;1&family=Space+Mono&family=Work+Sans&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Merriweather:ital@0;1&family=Space+Mono&family=Work+Sans&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bungee+Shade&family=Merriweather:ital@0;1&family=Space+Mono&family=Work+Sans&display=swap"
+        rel="stylesheet">
     <title>Boston Celtics Trivia
     </title>
 </head>
-<body>
-<!-- Game header -->
 
+<body>
+
+    <!-- Game header -->
     <header>
-          <h1 id="heading-text">Boston Celtics Trivia</h1>
+        <h1 id="heading-text">Boston Celtics Trivia</h1>
     </header>
     <!-- Button container -->
     <div id="top-btn-container">
@@ -26,7 +32,7 @@
     </div>
 
     <!-- Modal container for the directions button -->
-    <div  class="modal-container" id="modal_container">
+    <div class="modal-container" id="modal_container">
         <div class="modal">
             <h1>DIRECTIONS</h1><br>
             <p>• ALL Questions Are Based On The History Of The Boston Celtics</p>
@@ -46,25 +52,28 @@
 
     <div id="game-container" class="row hide">
         <div id="score-board" class="column">
-            <div id="score-div">
-                <h1 id="score-text">CURENT SCORE:<span id="score-tracker"> 0</span></h1>
+            <div id="wins-div">
+                <h1 id="wins-text">Wins: <span id="wins-tracker"> 0</span></h1>
             </div>
-           
+            <div id="losses-div">
+                <h1 id="losses-text">Losses: <span id="losses-tracker"> 0</span></h1>
+            </div>
         </div>
 
         <!-- question and answer container -->
-            <div id="answer-button-container" class="column"> 
-                <h3 id="question">Question</h3>
-                <button class="answer-buttons">Choice 1</button>
-                <button class="answer-buttons">Choice 2</button>
-                <button class="answer-buttons">Choice 3</button>
-                <button class="answer-buttons">Choice 4</button>
-            </div>   
+        <div id="answer-button-container" class="column">
+            <h3 id="question">Question</h3>
+            <button id="choice1" class="answer-buttons">Choice 1</button>
+            <button id="choice2" class="answer-buttons">Choice 2</button>
+            <button id="choice3" class="answer-buttons">Choice 3</button>
+            <button id="choice4" class="answer-buttons">Choice 4</button>
+        </div>
     </div>
-    
 
-  
-  <!-- scrip link tag -->
+
+
+    <!-- scrip link tag -->
     <script src="main.js"></script>
 </body>
+
 </html>
