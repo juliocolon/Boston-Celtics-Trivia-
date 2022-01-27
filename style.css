@@ -20,7 +20,7 @@ header{
 
 /*Body backgorund image */
 body{
-    background-image:url(background_image.jpg);
+    background-image:url(Image/background_image.jpg);
     min-height: 500px;
     background-attachment: fixed;
     background-position: center;
@@ -126,8 +126,6 @@ display: none;
 /* Create two equal columns that sits next to each other */
 .row {
     justify-content: center;
-    /* align-items: center; */
-    /* width: 50%; */
   }
   
   .column {
@@ -140,6 +138,15 @@ display: none;
     width: 30%; 
     margin: 10px;
   }
+
+  /* Question*/ 
+#question{
+    justify-content: center;
+    align-content: center;
+    text-align: left;
+}
+
+
 
 /*Answer Button styling start*/
 h3{
