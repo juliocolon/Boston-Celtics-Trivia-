@@ -15,10 +15,8 @@ const choice3 = document.querySelector('#choice3');
 const choice4 = document.querySelector('#choice4');
 const winsTracker = document.querySelector('#wins-tracker');
 const lossesTracker = document.querySelector('#losses-tracker');
-
-
-
-
+const variableMessage = document.querySelector('#variable-message-container');
+const variableMessageText = document.querySelector('#variable-message'); 
 
 //Questions array
 const questions = [
@@ -72,7 +70,7 @@ const questions = [
         choices: ['A: K.C Jones', 'B: Bill Russell', 'C: Sam Jones', 'D: Chuck Cooper'],
         answer: 'D: Chuck Cooper'
     },
-]; 
+];
 
 let winsScore = 1;
 let lossesScore = 1;
@@ -96,35 +94,36 @@ const startGame = () => {
 
 const rightAnswer = (evt) => {
     let chosenAnswer = evt.target.textContent;
-    console.log(chosenAnswer,currentAnswer)
-    if(chosenAnswer === currentAnswer){
+    if (chosenAnswer === currentAnswer) {
         incrementWins()
-        return true
-    }else {
+        // return true
+    } else {
         incrementLosses()
-        return false
+        // return false
     }
 };
 
 const incrementWins = () => {
     winsTracker.textContent = winsScore++
-    const audioElement = document.createElement('audio'); 
-    audioElement.setAttribute('src', 'Audio/BEKLKYL-basketball-26.mp3'); 
+    const audioElement = document.createElement('audio');
+    audioElement.setAttribute('src', 'Audio/BEKLKYL-basketball-26.mp3');
     audioElement.play()
+    variableMessageText.textContent = 'Nice Shot! Click Next To Keep Ballin!'
+    variableMessage.style.display = 'flex'
 };
 
 const incrementLosses = () => {
     lossesTracker.textContent = lossesScore++
-    const audioElement = document.createElement('audio'); 
-    audioElement.setAttribute('src', 'Audio/mixkit-wrong-answer-bass-buzzer-948.wav'); 
+    const audioElement = document.createElement('audio');
+    audioElement.setAttribute('src', 'Audio/mixkit-wrong-answer-bass-buzzer-948.wav');
     audioElement.play()
+    variableMessage.style.display = 'flex'
 };
 
 const nextQuestion = () => {
     currentQuestionIndex++
     let currentQuestion = questions[currentQuestionIndex];
     currentAnswer = currentQuestion.answer
-    console.log(currentAnswer)
     if (currentQuestionIndex < questions.length) {
         questionElement.textContent = questions[currentQuestionIndex].question
         questions[currentQuestionIndex].choices.forEach((choice, index) => {
@@ -132,6 +131,7 @@ const nextQuestion = () => {
             currentButton.textContent = "" + choice;
         })
     }
+    variableMessage.style.display = 'none'
 };
 
 
@@ -145,20 +145,20 @@ restartBtn.addEventListener('click', (evt) => {
 });
 
 choice1.addEventListener('click', (evt) => {
-    rightAnswer(evt); 
-});
+     rightAnswer(evt);
+    }); 
 
 choice2.addEventListener('click', (evt) => {
-    rightAnswer(evt); 
-});
+    rightAnswer(evt);
+}); 
 
 choice3.addEventListener('click', (evt) => {
-    rightAnswer(evt); 
-});
+    rightAnswer(evt);
+}); 
 
 choice4.addEventListener('click', (evt) => {
-    rightAnswer(evt); 
-});
+    rightAnswer(evt);
+}); 
 
 nextBtn.addEventListener('click', (evt) => {
     nextQuestion();

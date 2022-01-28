@@ -136,17 +136,15 @@ display: none;
     background-color: rgb(245, 245, 245, 0.8);
     border: 8px solid forestgreen;
     width: 30%; 
-    margin: 10px;
+    margin: 30px;
   }
 
   /* Question*/ 
 #question{
     justify-content: center;
     align-content: center;
-    text-align: left;
+    text-align: center;
 }
-
-
 
 /*Answer Button styling start*/
 h3{
@@ -160,7 +158,7 @@ h3{
   }
 
   .answer-buttons{
-    margin: 30px;
+    margin: 28px;
     height: 50px;
     color: whitesmoke;
     background-color: black;
@@ -185,11 +183,10 @@ h3{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    
 }
 
 #wins-div{
-    margin: 10px;
+    margin: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -217,6 +214,22 @@ h3{
     font-size: 22px;
 }
 
+#variable-message-container{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#variable-message{
+    font-family: 'Bebas Neue', cursive;
+    font-size: 35px;
+    color: whitesmoke;
+    background-color: forestgreen;
+    padding: 10px;
+    border: 3px solid whitesmoke;
+    width: 35%;
+}
 
 
 
