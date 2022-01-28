@@ -9,6 +9,7 @@ const gameContainer = document.querySelector('.row');
 const gameMessage = document.querySelector('#game-message');
 const questionElement = document.querySelector('#question');
 const answerButtons = Array.from(document.querySelectorAll('.answer-buttons'));
+console.log(answerButtons);
 const choice1 = document.querySelector('#choice1');
 const choice2 = document.querySelector('#choice2');
 const choice3 = document.querySelector('#choice3');
@@ -76,7 +77,6 @@ let winsScore = 1;
 let lossesScore = 1;
 let currentQuestionIndex = 0;
 let currentAnswer = 0;
-let totalQuestions = questions.length;
 
 //Functions
 const startGame = () => {
@@ -96,19 +96,30 @@ const rightAnswer = (evt) => {
     let chosenAnswer = evt.target.textContent;
     if (chosenAnswer === currentAnswer) {
         incrementWins()
-        // return true
+        disabled(true)
     } else {
-        incrementLosses()
-        // return false
+        incrementLosses() 
+        disabled(true)
     }
 };
+
+const disabled = (choice) => { /// function worked on by Josh and I, during a one on one
+answerButtons.forEach(answerButton => {
+    if(choice === true){
+        answerButton.disabled = true; 
+    }else {
+        answerButton.disabled = false; 
+    }
+// answerButton.disabled = choice === "yes"? true : false; 
+})
+}; 
 
 const incrementWins = () => {
     winsTracker.textContent = winsScore++
     const audioElement = document.createElement('audio');
     audioElement.setAttribute('src', 'Audio/BEKLKYL-basketball-26.mp3');
     audioElement.play()
-    variableMessageText.textContent = 'Nice Shot! Click Next To Keep Ballin!'
+    variableMessageText.textContent = 'Nice Shot! Click Next To Keep Balling!'
     variableMessage.style.display = 'flex'
 };
 
@@ -117,10 +128,12 @@ const incrementLosses = () => {
     const audioElement = document.createElement('audio');
     audioElement.setAttribute('src', 'Audio/mixkit-wrong-answer-bass-buzzer-948.wav');
     audioElement.play()
+    variableMessageText.textContent = 'You Missed! Click Next To Keep Balling!'
     variableMessage.style.display = 'flex'
 };
 
 const nextQuestion = () => {
+    disabled(false)
     currentQuestionIndex++
     let currentQuestion = questions[currentQuestionIndex];
     currentAnswer = currentQuestion.answer
