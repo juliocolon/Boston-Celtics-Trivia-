@@ -1,6 +1,6 @@
 # Game: Boston Celtics Trivia 
 
-![Boston Celtics Trivia](image/Screen Shot 2022-01-29 at 4.14.33 PM.png)
+![Boston Celtics Trivia](image/BostonCelticsTrivia.png)
 
 ## Technogies 
 HTML, CSS, JavaScript 
