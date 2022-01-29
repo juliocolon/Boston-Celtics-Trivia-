@@ -1,6 +1,6 @@
 # Game: Boston Celtics Trivia 
 
-![Boston Celtics Trivia](/juliocolon/Boston-Celtics-Trivia-/blob/main/Image/BostonCelticsTrivia.png)
+![Boston Celtics Trivia](https://github.com/juliocolon/Boston-Celtics-Trivia-/blob/main/Image/BostonCelticsTrivia.png)
 
 ## Technogies 
 HTML, CSS, JavaScript 
