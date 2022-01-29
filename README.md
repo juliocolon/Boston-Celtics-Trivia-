@@ -25,6 +25,12 @@ I would like to add some 2D animation.
 
 I would like to randomize the questions and answers. 
 
+## Images, Gifs and Audio
+
+•Gifs sourced from (https://giphy.com/explore/boston-celtics)
+•Background Image sourced from (https://wallpaperaccess.com/boston-celtics)
+•Audio (https://mixkit.co/free-sound-effects/basketball/)
+
 
 
 
