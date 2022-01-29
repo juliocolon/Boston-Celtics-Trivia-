@@ -212,7 +212,7 @@ h3{
     border: 3px solid forestgreen;
     font-family: 'Bebas Neue', cursive;
     font-size: 22px;
-}
+}/* Variable message styling */
 
 #variable-message-container{
     display: none;
@@ -228,7 +228,23 @@ h3{
     background-color: forestgreen;
     padding: 10px;
     border: 3px solid whitesmoke;
-    width: 30%;
+    width: 40%;
+}
+
+/*Giphy sizing */
+
+.win-giphy-embed{
+    max-width: 100%;
+    width: 100%;
+    height: 300%; /* vary this to your needs ie auto, 100%, etc */
+    margin: 0 auto;
+}
+
+.lose-giphy-embed{
+    max-width: 100%;
+    width: 100%;
+    height: 300%; /* vary this to your needs ie auto, 100%, etc */
+    margin: 0 auto;
 }
 
 

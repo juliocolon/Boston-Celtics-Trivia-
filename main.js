@@ -9,7 +9,6 @@ const gameContainer = document.querySelector('.row');
 const gameMessage = document.querySelector('#game-message');
 const questionElement = document.querySelector('#question');
 const answerButtons = Array.from(document.querySelectorAll('.answer-buttons'));
-console.log(answerButtons);
 const choice1 = document.querySelector('#choice1');
 const choice2 = document.querySelector('#choice2');
 const choice3 = document.querySelector('#choice3');
@@ -18,65 +17,92 @@ const winsTracker = document.querySelector('#wins-tracker');
 const lossesTracker = document.querySelector('#losses-tracker');
 const variableMessage = document.querySelector('#variable-message-container');
 const variableMessageText = document.querySelector('#variable-message'); 
+const topButtons = Array.from(document.querySelectorAll('.top-buttons'));
+const winGiphy = document.querySelector('.win-giphy-embed')
+const loseGiphy = document.querySelector('.lose-giphy-embed')
+let winsScore = 1;
+let lossesScore = 1;
+let currentQuestionIndex = 0;
+let currentAnswer = 0;
 
 //Questions array
 const questions = [
     {
         question: 'What year were the Boston Celtics founded?',
-        choices: ['A: 1946', 'B: 1956', 'C: 1966', 'D: 1976'],
-        answer: 'A: 1946'
+        choices: ['☘️: 1946', '☘️: 1956', '☘️: 1966', '☘️: 1976'],
+        answer: '☘️: 1946'
     },
     {
         question: 'What is the name of the Boston Celtics Mascot?',
-        choices: ['A: Irish', 'B: Shamrock', 'C: Lucky', 'D: Banshee'],
-        answer: 'C: Lucky'
+        choices: ['☘️: Irish', '☘️: Shamrock', '☘️: Lucky', '☘️: Banshee'],
+        answer: '☘️: Lucky'
     },
     {
         question: 'Which Celtics player grabbed 50 rebounds in a single game?',
-        choices: ['A: Kevin Garnett', 'B: Dave Cowens', 'C: Robert Parish', 'D: Bill Russell'],
-        answer: 'D: Bill Russell'
+        choices: ['☘️: Kevin Garnett', '☘️: Dave Cowens', '☘️: Robert Parish', '☘️: Bill Russell'],
+        answer: '☘️: Bill Russell'
     },
     {
         question: 'What did Celtics coach Red Auerbach often do when he thought victory was assured?',
-        choices: ['A: Take Off His Shoes', 'B: Have A Beer', 'C: Smoke A Cigar', 'D: Take Off His Tie'],
-        answer: 'C: Smoke A Cigar'
+        choices: ['☘️: Take Off His Shoes', '☘️: Have A Beer', '☘️: Smoke A Cigar', '☘️: Take Off His Tie'],
+        answer: '☘️: Smoke A Cigar'
     },
     {
         question: 'Which Celtics player scored 60 points in a single game?',
-        choices: ['A: Larry Bird', 'B: Paul Pierce', 'C: Jasyon Tatum', 'D: John Havlicek'],
-        answer: 'A: Larry Bird'
+        choices: ['☘️: Larry Bird', '☘️: Paul Pierce', '☘️: Jasyon Tatum', '☘️: John Havlicek'],
+        answer: '☘️: Larry Bird'
     },
     {
         question: 'Who is the Boston Celtics all-time points leader?',
-        choices: ['A: Paul Pierce', 'B: Larry Bird', 'C: John Havilcek', 'D: Bill Russell'],
-        answer: 'C: John Havilcek'
+        choices: ['☘️: Paul Pierce', '☘️: Larry Bird', '☘️: John Havilcek', '☘️: Bill Russell'],
+        answer: '☘️: John Havilcek'
     },
     {
         question: 'Which Celtic is one of only five NBA players to lead his team in all five major statistical categories for a season?',
-        choices: ['A: Dave Cowens', 'B: Bill Russell', 'C: Kevin Garnett', 'D: Larry Bird'],
-        answer: 'A: Dave Cowens'
+        choices: ['☘️: Dave Cowens', '☘️: Bill Russell', '☘️: Kevin Garnett', '☘️: Larry Bird'],
+        answer: '☘️: Dave Cowens'
     },
     {
         question: 'Which Boston Celtic won five NBA Most Valuable Player Awards?',
-        choices: ['A: Larry Bird', 'B: Bill Russell', 'C: Bob Cousy', 'D: Dave Cowens'],
-        answer: 'B: Bill Russell'
+        choices: ['☘️: Larry Bird', '☘️: Bill Russell', '☘️: Bob Cousy', '☘️: Dave Cowens'],
+        answer: '☘️: Bill Russell'
     },
     {
         question: 'What is the most points scored by the Celtics (in regulation) in a single game?',
-        choices: ['A: 168 Points', 'B: 189 Points', 'C: 163 Points', 'D: 173 Points'],
-        answer: 'D: 173 Points'
+        choices: ['☘️: 168 Points', '☘️: 189 Points', '☘️: 163 Points', '☘️: 173 Points'],
+        answer: '☘️: 173 Points'
     },
     {
         question: 'Which Celtic was the first African-American player in the NBA?',
-        choices: ['A: K.C Jones', 'B: Bill Russell', 'C: Sam Jones', 'D: Chuck Cooper'],
-        answer: 'D: Chuck Cooper'
+        choices: ['☘️: K.C Jones', '☘️: Bill Russell', '☘️: Sam Jones', '☘️: Chuck Cooper'],
+        answer: '☘️: Chuck Cooper'
+    },
+    {
+        question: 'How many NBA championships did the Celtics win during the 20th century?',
+        choices: ['☘️: 16', '☘️: 10', '☘️: 18', '☘️: 13'],
+        answer: '☘️: 16'
+    },
+    {
+        question: 'Which Celtics coach had the highest winning percentage?',
+        choices: ['☘️: Red Auerbach', '☘️: Doc Rivers', '☘️: K.C Jones', '☘️: M.L Carr'],
+        answer: '☘️: K.C Jones'
+    },
+    {
+        question: 'Who was the first Celtic to win the NBA Sixth Man of the Year Award?',
+        choices: ['☘️: Marcus Smart', '☘️: Bill Walton', '☘️: Kevin McHale', '☘️: Dennis Johnson'],
+        answer: '☘️: Kevin McHale'
+    },
+    {
+        question: 'Who was the first Celtic with 1,000 career three-pointers?',
+        choices: ['☘️: Paul Pierce', '☘️: Ray Allen', '☘️: Larry Bird', '☘️: Antoine Walker'],
+        answer: '☘️: Paul Pierce'
+    },
+    {
+        question:  'Who was the first Celtic with more than 200 blocked shots in a season?',
+        choices: ['☘️: Kendrick Perkins', '☘️: Bill Russell', '☘️: Kevin Garnett', '☘️: Robert Parish'],
+        answer: '☘️: Robert Parish'
     },
 ];
-
-let winsScore = 1;
-let lossesScore = 1;
-let currentQuestionIndex = 0;
-let currentAnswer = 0;
 
 //Functions
 const startGame = () => {
@@ -89,21 +115,20 @@ const startGame = () => {
         currentButton.textContent = "" + choice;
     });
     currentAnswer = currentQuestion.answer
-    console.log(currentAnswer)
 };
 
 const rightAnswer = (evt) => {
     let chosenAnswer = evt.target.textContent;
     if (chosenAnswer === currentAnswer) {
         incrementWins()
-        disabled(true)
+        disableChoices(true)
     } else {
         incrementLosses() 
-        disabled(true)
+        disableChoices(true)
     }
 };
 
-const disabled = (choice) => { /// function worked on by Josh and I, during a one on one
+const disableChoices = (choice) => { /// function worked on by Josh and I, during a one on one
 answerButtons.forEach(answerButton => {
     if(choice === true){
         answerButton.disabled = true; 
@@ -114,13 +139,31 @@ answerButtons.forEach(answerButton => {
 })
 }; 
 
+const disableNextButton = (choice) => {
+    if(choice === true){
+        nextBtn.disabled = true; 
+    }else{
+        nextBtn.disabled = false;
+    }
+}; 
+
 const incrementWins = () => {
     winsTracker.textContent = winsScore++
     const audioElement = document.createElement('audio');
     audioElement.setAttribute('src', 'Audio/BEKLKYL-basketball-26.mp3');
     audioElement.play()
-    variableMessageText.textContent = 'Nice Shot! Click Next To Keep Balling!'
+    variableMessageText.textContent = 'Nice Shot 🏀! Click Next To Keep Balling!'
     variableMessage.style.display = 'flex'
+      if(winsTracker.textContent > 11){
+        variableMessageText.textContent = 'You Have Won 🏆! Your Celtics Knowledge Is Impressive.'
+        questionElement.textContent = 'Press Restart To Play Again!'
+        choice1.style.display = 'none'; 
+        choice2.style.display = 'none'; 
+        choice3.style.display = 'none'; 
+        choice4.style.display = 'none'; 
+        winGiphy.style.display = 'flex';
+        winGiphy.style.margin = '7%';
+    }
 };
 
 const incrementLosses = () => {
@@ -128,12 +171,23 @@ const incrementLosses = () => {
     const audioElement = document.createElement('audio');
     audioElement.setAttribute('src', 'Audio/mixkit-wrong-answer-bass-buzzer-948.wav');
     audioElement.play()
-    variableMessageText.textContent = 'You Missed! Click Next To Keep Balling!'
+    variableMessageText.textContent = 'You Missed 👎🏽! Click Next To Keep Balling!'
     variableMessage.style.display = 'flex'
+    if(lossesTracker.textContent > 2){
+        variableMessageText.textContent = 'You Have Lost 🚫 🏆!'
+        questionElement.textContent = 'Press Restart To Play Again!'
+        choice1.style.display = 'none'; 
+        choice2.style.display = 'none'; 
+        choice3.style.display = 'none'; 
+        choice4.style.display = 'none'; 
+        loseGiphy.style.display = 'flex';
+        // winGiphy.style.justifyContent = 'center';
+        loseGiphy.style.margin = '7%';
+    }
 };
 
 const nextQuestion = () => {
-    disabled(false)
+    disableChoices(false)
     currentQuestionIndex++
     let currentQuestion = questions[currentQuestionIndex];
     currentAnswer = currentQuestion.answer
@@ -144,8 +198,12 @@ const nextQuestion = () => {
             currentButton.textContent = "" + choice;
         })
     }
+    if (winsTracker.textContent >= 11){
+        disableNextButton(true)
+    }
     variableMessage.style.display = 'none'
 };
+
 
 
 // Event listeners 
@@ -154,7 +212,7 @@ startBtn.addEventListener('click', (evt) => {
 });
 
 restartBtn.addEventListener('click', (evt) => {
-    location.reload();
+         location.reload();
 });
 
 choice1.addEventListener('click', (evt) => {
