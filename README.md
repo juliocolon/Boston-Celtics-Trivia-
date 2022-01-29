@@ -1,6 +1,7 @@
 # Game: Boston Celtics Trivia 
 
-![This is an image](https://github.com/juliocolon/Boston-Celtics-Trivia-.git/Boston-Celtics-Trivia-/Image/Screen Shot 2022-01-29 at 4.14.33 PM.png)
+![Boston Celtics Trivia](image/Screen Shot 2022-01-29 at 4.14.33 PM.png)
+
 ## Technogies 
 HTML, CSS, JavaScript 
 
