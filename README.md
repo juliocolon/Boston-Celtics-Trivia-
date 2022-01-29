@@ -3,7 +3,15 @@
 ![Boston Celtics Trivia](https://github.com/juliocolon/Boston-Celtics-Trivia-/blob/main/Image/BostonCelticsTrivia.png)
 
 ## Technogies 
-HTML, CSS, JavaScript 
+HTML, CSS, JavaScript in VS Code
+
+## Game Mechanics and Rules
+- All Questions Are Based On The History Of The Boston Celtics
+- Click The Start Button To Begin
+- Click The Next Button To Move On To The Next Question
+- Answer Twelve Questions Correctly And You Win
+- Answer Three Questions Incorrectly And You Lose
+- Click The Restart Button To Start Over
 
 ## Approach
 Focused upon laying out the game interface in the DOM, working through each event and writing the appropriate function for each event in pragmatic fashion. 
@@ -27,9 +35,9 @@ I would like to randomize the questions and answers.
 
 ## Images, Gifs and Audio
 
-•Gifs sourced from (https://giphy.com/explore/boston-celtics)
-•Background Image sourced from (https://wallpaperaccess.com/boston-celtics)
-•Audio (https://mixkit.co/free-sound-effects/basketball/)
+- Gifs sourced from (https://giphy.com/explore/boston-celtics)
+- Background Image sourced from (https://wallpaperaccess.com/boston-celtics)
+- Audio (https://mixkit.co/free-sound-effects/basketball/)
 
 
 
