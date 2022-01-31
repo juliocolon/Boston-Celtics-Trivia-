@@ -21,7 +21,7 @@ Spent most time on my nextQuestion() function, which was my biggest challenge th
 This site was built using [GitHub Pages](https://juliocolon.github.io/Boston-Celtics-Trivia-/).
 
 ## Challenges 
-Thinking through how to organize my data either using an array or a class/constructor. I choose with an array with nested objects. 
+Thinking through how to organize my data either using an array or a class/constructor. I chose an array with nested objects. 
 Thinking through my nextQuestion() function and making it dynamic. 
 Diasabling certain buttons, once a user made a choice on a given question. 
 
