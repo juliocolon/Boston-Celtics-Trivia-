@@ -3,7 +3,7 @@
 ![Boston Celtics Trivia](https://github.com/juliocolon/Boston-Celtics-Trivia-/blob/main/Image/BostonCelticsTrivia.png)
 
 ## Technogies 
-HTML, CSS, JavaScript
+HTML, CSS, JavaScript, Virtual Studio Code, GitHub
 
 ## Game Mechanics and Rules
 - All Questions Are Based On The History Of The Boston Celtics
@@ -15,7 +15,7 @@ HTML, CSS, JavaScript
 
 ## Approach
 Focused upon laying out the game interface in the DOM, working through each event and writing the appropriate function for each event in pragmatic fashion. 
-Spent most time on my nextQuestion() function, which was my biggest challenge thinking through how to append the appropriate key/value pair to the object in the DOM. 
+Spent most time on my nextQuestion() function, which was my biggest challenge thinking through how to append the appropriate key/value pair to the object I was aiming to target in the DOM. 
 
 ## Live Site Link 
 This site was built using [GitHub Pages](https://juliocolon.github.io/Boston-Celtics-Trivia-/).
@@ -26,12 +26,12 @@ Thinking through my nextQuestion() function and making it dynamic.
 Diasabling certain buttons, once a user made a choice on a given question. 
 
 ## Unsolved Problems 
-I would like to add a :24 second clock that would give users :24 seconds to answer each question, else their incorrect answers would increment and they 
+- Add a :24 second clock that would give users :24 seconds to answer each question, else their incorrect answers would increment and they 
 would be forced to move onto the next question. 
-
-I would like to add some 2D animation. 
-
-I would like to randomize the questions and answers. 
+- Add some 2D animation. 
+- Randomize the questions and answers. 
+- Make the design responsive for mobile devices. 
+- Add a home screen, where a user can choose to play NBA trivia for all 32 teams. 
 
 ## Images, Gifs and Audio
 
