@@ -16,7 +16,7 @@ const choice4 = document.querySelector('#choice4');
 const winsTracker = document.querySelector('#wins-tracker');
 const lossesTracker = document.querySelector('#losses-tracker');
 const variableMessage = document.querySelector('#variable-message-container');
-const variableMessageText = document.querySelector('#variable-message'); 
+const variableMessageText = document.querySelector('#variable-message');
 const topButtons = Array.from(document.querySelectorAll('.top-buttons'));
 const winGiphy = document.querySelector('.win-giphy-embed')
 const loseGiphy = document.querySelector('.lose-giphy-embed')
@@ -98,7 +98,7 @@ const questions = [
         answer: '☘️: Paul Pierce'
     },
     {
-        question:  'Who was the first Celtic with more than 200 blocked shots in a season?',
+        question: 'Who was the first Celtic with more than 200 blocked shots in a season?',
         choices: ['☘️: Kendrick Perkins', '☘️: Bill Russell', '☘️: Kevin Garnett', '☘️: Robert Parish'],
         answer: '☘️: Robert Parish'
     },
@@ -122,30 +122,40 @@ const rightAnswer = (evt) => {
     if (chosenAnswer === currentAnswer) {
         incrementWins()
         disableChoices(true)
+        disableStartButton(true)
     } else {
-        incrementLosses() 
+        incrementLosses()
         disableChoices(true)
+        disableStartButton(true)
     }
 };
 
 const disableChoices = (choice) => { /// function worked on by Josh and I, during a one on one
-answerButtons.forEach(answerButton => {
-    if(choice === true){
-        answerButton.disabled = true; 
-    }else {
-        answerButton.disabled = false; 
-    }
-// answerButton.disabled = choice === "yes"? true : false; 
-})
-}; 
+    answerButtons.forEach(answerButton => {
+        if (choice === true) {
+            answerButton.disabled = true;
+        } else {
+            answerButton.disabled = false;
+        }
+        // answerButton.disabled = choice === "yes"? true : false; 
+    })
+};
 
 const disableNextButton = (choice) => {
-    if(choice === true){
-        nextBtn.disabled = true; 
-    }else{
+    if (choice === true) {
+        nextBtn.disabled = true;
+    } else {
         nextBtn.disabled = false;
     }
-}; 
+};
+
+const disableStartButton = (choice) => {
+    if (choice === true) {
+        startBtn.disabled = true;
+    } else {
+        startBtn.disabled = false;
+    }
+};
 
 const incrementWins = () => {
     winsTracker.textContent = winsScore++
@@ -154,13 +164,13 @@ const incrementWins = () => {
     audioElement.play()
     variableMessageText.textContent = 'Nice Shot 🏀! Click Next To Keep Balling!'
     variableMessage.style.display = 'flex'
-      if(winsTracker.textContent > 11){
+    if (winsTracker.textContent > 11) {
         variableMessageText.textContent = 'You Have Won 🏆! Your Celtics Knowledge Is Impressive.'
         questionElement.textContent = 'Press Restart To Play Again!'
-        choice1.style.display = 'none'; 
-        choice2.style.display = 'none'; 
-        choice3.style.display = 'none'; 
-        choice4.style.display = 'none'; 
+        choice1.style.display = 'none';
+        choice2.style.display = 'none';
+        choice3.style.display = 'none';
+        choice4.style.display = 'none';
         winGiphy.style.display = 'flex';
         winGiphy.style.margin = '7%';
     }
@@ -173,15 +183,14 @@ const incrementLosses = () => {
     audioElement.play()
     variableMessageText.textContent = 'You Missed 👎🏽! Click Next To Keep Balling!'
     variableMessage.style.display = 'flex'
-    if(lossesTracker.textContent > 2){
+    if (lossesTracker.textContent > 2) {
         variableMessageText.textContent = 'You Have Lost 🚫 🏆!'
         questionElement.textContent = 'Press Restart To Play Again!'
-        choice1.style.display = 'none'; 
-        choice2.style.display = 'none'; 
-        choice3.style.display = 'none'; 
-        choice4.style.display = 'none'; 
+        choice1.style.display = 'none';
+        choice2.style.display = 'none';
+        choice3.style.display = 'none';
+        choice4.style.display = 'none';
         loseGiphy.style.display = 'flex';
-        // winGiphy.style.justifyContent = 'center';
         loseGiphy.style.margin = '7%';
     }
 };
@@ -198,7 +207,7 @@ const nextQuestion = () => {
             currentButton.textContent = "" + choice;
         })
     }
-    if (winsTracker.textContent >= 11){
+    if (winsTracker.textContent >= 11 ||lossesTracker.textContent >= 2 ) {
         disableNextButton(true)
     }
     variableMessage.style.display = 'none'
@@ -212,24 +221,24 @@ startBtn.addEventListener('click', (evt) => {
 });
 
 restartBtn.addEventListener('click', (evt) => {
-         location.reload();
+   window.location.reload();
 });
 
 choice1.addEventListener('click', (evt) => {
-     rightAnswer(evt);
-    }); 
+    rightAnswer(evt);
+});
 
 choice2.addEventListener('click', (evt) => {
     rightAnswer(evt);
-}); 
+});
 
 choice3.addEventListener('click', (evt) => {
     rightAnswer(evt);
-}); 
+});
 
 choice4.addEventListener('click', (evt) => {
     rightAnswer(evt);
-}); 
+});
 
 nextBtn.addEventListener('click', (evt) => {
     nextQuestion();
