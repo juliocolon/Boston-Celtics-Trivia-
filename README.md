@@ -3,11 +3,7 @@
 ![Boston Celtics Trivia](https://github.com/juliocolon/Boston-Celtics-Trivia-/blob/main/Image/BostonCelticsTrivia.png)
 
 ## Technogies 
-<<<<<<< HEAD
-HTML, CSS, JavaScript
-=======
 HTML, CSS, JavaScript, Virtual Studio Code, GitHub
->>>>>>> 5e3297d19e883d166f7ca630dc4d68c1c0c86d64
 
 ## Game Mechanics and Rules
 - All Questions Are Based On The History Of The Boston Celtics
