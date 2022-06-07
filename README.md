@@ -30,21 +30,12 @@ Thinking through my nextQuestion() function and making it dynamic.
 Diasabling certain buttons, once a user made a choice on a given question. 
 
 ## Unsolved Problems 
-<<<<<<< HEAD
-I would like to add a :24 second clock that would give users :24 seconds to answer each question, else their incorrect answers would increment and they 
-would be forced to move onto the next question. 
-
-I would like to add some 2D animation. 
-
-I would like to randomize the questions and answers. 
-=======
 - Add a :24 second clock that would give users :24 seconds to answer each question, else their incorrect answers would increment and they 
 would be forced to move onto the next question. 
 - Add some 2D animation. 
 - Randomize the questions and answers. 
 - Make the design responsive for mobile devices. 
 - Add a home screen, where a user can choose to play NBA trivia for all 32 teams. 
->>>>>>> 5e3297d19e883d166f7ca630dc4d68c1c0c86d64
 
 ## Images, Gifs and Audio
 
