@@ -207,7 +207,7 @@ const nextQuestion = () => {
             currentButton.textContent = "" + choice;
         })
     }
-    if (winsTracker.textContent >= 11 ||lossesTracker.textContent >= 2 ) {
+    if (winsTracker.textContent >= 11 ||lossesTracker.textContent >= 3 ) {
         disableNextButton(true)
     }
     variableMessage.style.display = 'none'
