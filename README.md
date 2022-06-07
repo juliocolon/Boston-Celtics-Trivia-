@@ -14,12 +14,8 @@ HTML, CSS, JavaScript, Virtual Studio Code, GitHub
 - Click The Restart Button To Start Over
 
 ## Approach
-Focused upon laying out the game interface in the DOM, working through each event and writing the appropriate function for each event in pragmatic fashion. 
-<<<<<<< HEAD
-Spent most time on my nextQuestion() function, which was my biggest challenge thinking through how to append the appropriate key/value pair to the object in the DOM. 
-=======
-Spent most time on my nextQuestion() function, which was my biggest challenge thinking through how to append the appropriate key/value pair to the object I was aiming to target in the DOM. 
->>>>>>> 5e3297d19e883d166f7ca630dc4d68c1c0c86d64
+Focused upon laying out the game interface in the DOM, working through each event and writing the appropriate function for each function in a DRY fashion. 
+I spent most time on my nextQuestion() function, which was my biggest challenge thinking through how to append the appropriate key/value pair to the object I was aiming to target in the DOM. 
 
 ## Live Site Link 
 This site was built using [GitHub Pages](https://juliocolon.github.io/Boston-Celtics-Trivia-/).
